@@ -10,20 +10,25 @@
       "style": "0",
       "userScale": "2",
       "width": "1920",
-      "xpos": "77",
-      "ypos": "108"
+      "xpos": "47",
+      "ypos": "66"
     }
   },
   "Window": {
+    "###/SmartDashboard/Field": {
+      "Collapsed": "0",
+      "Pos": "494,67",
+      "Size": "602,338"
+    },
     "###FMS": {
       "Collapsed": "0",
       "Pos": "7,810",
-      "Size": "388,182"
+      "Size": "32,38"
     },
     "###Joysticks": {
       "Collapsed": "0",
       "Pos": "375,697",
-      "Size": "1156,91"
+      "Size": "32,38"
     },
     "###NetworkTables": {
       "Collapsed": "0",
@@ -38,12 +43,12 @@
     "###System Joysticks": {
       "Collapsed": "0",
       "Pos": "7,525",
-      "Size": "273,290"
+      "Size": "32,38"
     },
     "###Timing": {
       "Collapsed": "0",
       "Pos": "7,225",
-      "Size": "188,215"
+      "Size": "32,38"
     },
     "Debug##Default": {
       "Collapsed": "0",
@@ -53,7 +58,7 @@
     "Robot State": {
       "Collapsed": "0",
       "Pos": "5,20",
-      "Size": "126,129"
+      "Size": "32,38"
     }
   }
 }

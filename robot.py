@@ -12,8 +12,9 @@ from commands.TeleopCommands.SwerveJoystickCmd import SwerveJoystickCmd
 import ntcore
 import robotpy_apriltag
 import time
-import numpy
-
+import pathplannerlib
+ 
+  
 
 class MyRobot(commands2.TimedCommandRobot):
     """
@@ -26,7 +27,8 @@ class MyRobot(commands2.TimedCommandRobot):
     AutonomousCommand: typing.Optional[commands2.Command] = None
     
     def robotInit(self) -> None:
-        self.sd = wpilib.SmartDashboard
+        self.sd = wpilib.SmartDashboard  
+
         """
         This function is run when the robot is first started up and should be used for any
         initialization code.
@@ -36,6 +38,8 @@ class MyRobot(commands2.TimedCommandRobot):
         # autonomous chooser on the dashboard.
         # wpilib.CameraServer().launch("vision.py:main")
         self.Container = RobotContainer()
+        self.Container.getAutonomousCommand()      
+
         self.driverController = self.Container.driverController
         self.operatorController = self.Container.operatorController
         

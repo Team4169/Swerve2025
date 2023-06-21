@@ -22,6 +22,8 @@ from subsystems.armsubsystem import ArmSubsystem
 from subsystems.swervesubsystem import SwerveSubsystem
 import math
 import photonvision
+import pathplannerlib as ppl
+from robotpy_ext.autonomous import AutonomousModeSelector
 
 class RobotContainer:
     """
@@ -82,6 +84,7 @@ class RobotContainer:
         # self.shuffle.putData("dropOffAngle", self.dropOffAngle)
         # self.shuffle.putData("dropOffExtend", self.dropOffExtend)
         # self.shuffle.putData("dropObject", self.dropObject)
+        # ! make sure to add Path planner to Robot https://robotpy.readthedocs.io/en/stable/install/pathplannerlib.html#:~:text=Linux/macOS-,Setup%20(RoboRIO),%C2%B6,-Even%20if%20you
 
         self.camera = photonvision.PhotonCamera("Microsoft_LifeCam_HD-3000")
     def getAutonomousCommand(self) -> commands2.Command:
@@ -132,8 +135,18 @@ class RobotContainer:
             self.swerveControllerCommand,
             commands2.InstantCommand(self.swerve.stopModules())
         )
+        self.circle = ppl.PathPlannerTrajectory(ppl.PathPlanner.loadPathGroup(
+            "circle",
+            ppl.PathConstraints(
+                AutoConstants.kMaxSpeedMetersPerSecond,
+                AutoConstants.kMaxAccelerationMetersPerSecondSquared
+            ),
+        ))
 
+        self.chooser.addOption("square", self.square)
+        self.chooser.addOption("circle", self.circle)
 
-        return self.square
+        
+        return self.chooser.getSelected()
 
         #optimize clip https://youtu.be/0Xi9yb1IMyA?t=225
