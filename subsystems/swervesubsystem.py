@@ -58,15 +58,15 @@ class SwerveSubsystem (commands2.SubsystemBase):
         thread.start()
 
     #~ Gyro Commands
+    def zeroHeading(self):
+        self.gyro.reset()
+
     def zero_heading_after_delay(self):
         try:
             time.sleep(1)
-            self.zero_heading()
+            self.gyro.reset()
         except Exception as e:
             pass
-
-    def zeroHeading(self):
-        self.gyro.reset()
         
     def getHeading(self):
         return math.remainder(self.gyro.getAngle(), 360)
@@ -93,20 +93,20 @@ class SwerveSubsystem (commands2.SubsystemBase):
         self.backRight.stop()
 
     def setModuleStates(self, states: list[SwerveModuleState]):
-        SwerveDrive4Kinematics.desaturateWheelSpeeds(states, RobotConstants.kphysicalMaxSpeedMetersPerSecond)
+        SwerveDrive4Kinematics.desaturateWheelSpeeds(tuple(states), RobotConstants.kphysicalMaxSpeedMetersPerSecond)
         self.frontLeft.setDesiredState(states[0])
         self.frontRight.setDesiredState(states[1])
         self.backLeft.setDesiredState(states[2])
         self.backRight.setDesiredState(states[3])
     
-    def getModuleStates(self) -> list[SwerveModulePosition]:
+    def getModuleStates(self) -> tuple[SwerveModulePosition, SwerveModulePosition, SwerveModulePosition, SwerveModulePosition]:
         return (
                 self.frontRight.getSwerveModulePosition(),
                 self.backRight.getSwerveModulePosition(),
                 self.frontLeft.getSwerveModulePosition(),
                 self.backLeft.getSwerveModulePosition()
                 )
-    def getModuleStatesOld(self) -> tuple[SwerveModulePosition]:
+    def getModuleStatesOld(self) -> tuple[SwerveModulePosition, SwerveModulePosition,SwerveModulePosition,SwerveModulePosition]:
         return (
                 SwerveModulePosition(self.frontRight.getDrivingPosition(), Rotation2d(self.frontRight.getAbsoluteEncoderRad())),
                 SwerveModulePosition(self.backRight.getDrivingPosition(), Rotation2d(self.backRight.getAbsoluteEncoderRad())),
