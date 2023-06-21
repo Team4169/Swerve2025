@@ -9,6 +9,8 @@ import UtilCommands
 from wpimath.kinematics import SwerveDrive4Kinematics
 from wpimath.geometry._geometry import Translation2d
 from wpimath.trajectory import TrapezoidProfileRadians, TrapezoidProfile
+import commands2
+
 #~ Controller Options
 class OIConstants:
     kDriverControllerPort = 0
@@ -107,4 +109,8 @@ class AutoConstants:
                 kMaxAngularSpeedRadiansPerSecond,
                 kMaxAngularAccelerationRadiansPerSecondSquared,
         )
+        event_map = {
+            "marker1": commands2.PrintCommand("Passed marker 1"),
+
+        }
 

@@ -6,6 +6,7 @@ import commands2
 import ctre
 import math
 import constants
+from wpilib import SendableChooser
 
 from robotcontainer import RobotContainer
 from commands2 import CommandScheduler
@@ -29,6 +30,7 @@ class MyRobot(commands2.TimedCommandRobot):
     
     def robotInit(self) -> None:
         self.sd = wpilib.SmartDashboard  
+        
 
         """
         This function is run when the robot is first started up and should be used for any
@@ -61,7 +63,7 @@ class MyRobot(commands2.TimedCommandRobot):
         """This autonomous runs the autonomous command selected by your RobotContainer class."""
         #~ will be needed for future use
         self.autonomousCommand = self.Container.getAutonomousCommand()
-        print(self.autonomousCommand, type(self.autonomousCommand))
+
         # self.output("ato com", self.autonomousCommand)
        
         if self.autonomousCommand:
@@ -132,7 +134,7 @@ class MyRobot(commands2.TimedCommandRobot):
     
     def sendLEDCommand(self, command, isRedAlliance = None):
             # send the specified command to the LEDserver
-            team_command = isRedAlliance
+            team_command = 0
             if not isRedAlliance:
                 team_command = command + 3
             if self.previousLEDCommand != team_command:

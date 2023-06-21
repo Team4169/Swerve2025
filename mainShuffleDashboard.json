@@ -19,7 +19,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/Auto Selector",
-              "_title": "Auto Selector"
+              "_title": "Auto Selector",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "1,0": {
@@ -31,6 +33,8 @@
               "_type": "Boolean Box",
               "_source0": "network_table:///SmartDashboard/DB/Button 0",
               "_title": "DB/Button 0",
+              "_glyph": 148,
+              "_showGlyph": false,
               "Colors/Color when true": "#7CFC00FF",
               "Colors/Color when false": "#8B0000FF"
             }
@@ -44,6 +48,8 @@
               "_type": "Boolean Box",
               "_source0": "network_table:///SmartDashboard/DB/Button 1",
               "_title": "DB/Button 1",
+              "_glyph": 148,
+              "_showGlyph": false,
               "Colors/Color when true": "#7CFC00FF",
               "Colors/Color when false": "#8B0000FF"
             }
@@ -57,6 +63,8 @@
               "_type": "Boolean Box",
               "_source0": "network_table:///SmartDashboard/DB/Button 2",
               "_title": "DB/Button 2",
+              "_glyph": 148,
+              "_showGlyph": false,
               "Colors/Color when true": "#7CFC00FF",
               "Colors/Color when false": "#8B0000FF"
             }
@@ -70,6 +78,8 @@
               "_type": "Boolean Box",
               "_source0": "network_table:///SmartDashboard/DB/Button 3",
               "_title": "DB/Button 3",
+              "_glyph": 148,
+              "_showGlyph": false,
               "Colors/Color when true": "#7CFC00FF",
               "Colors/Color when false": "#8B0000FF"
             }
@@ -82,7 +92,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/DB/Slider 3",
-              "_title": "DB/Slider 3"
+              "_title": "DB/Slider 3",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "6,0": {
@@ -93,7 +105,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/DB/Slider 2",
-              "_title": "DB/Slider 2"
+              "_title": "DB/Slider 2",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "7,0": {
@@ -104,7 +118,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/DB/Slider 1",
-              "_title": "DB/Slider 1"
+              "_title": "DB/Slider 1",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "0,1": {
@@ -115,7 +131,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/DB/Slider 0",
-              "_title": "DB/Slider 0"
+              "_title": "DB/Slider 0",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "1,1": {
@@ -126,7 +144,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/DB/String 0",
-              "_title": "DB/String 0"
+              "_title": "DB/String 0",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "2,1": {
@@ -137,7 +157,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/DB/String 1",
-              "_title": "DB/String 1"
+              "_title": "DB/String 1",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "3,1": {
@@ -148,7 +170,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/DB/String 2",
-              "_title": "DB/String 2"
+              "_title": "DB/String 2",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "4,1": {
@@ -159,7 +183,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/DB/String 3",
-              "_title": "DB/String 3"
+              "_title": "DB/String 3",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "5,1": {
@@ -170,7 +196,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/DB/String 4",
-              "_title": "DB/String 4"
+              "_title": "DB/String 4",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "6,1": {
@@ -181,7 +209,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/DB/String 5",
-              "_title": "DB/String 5"
+              "_title": "DB/String 5",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "7,1": {
@@ -192,7 +222,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/DB/String 6",
-              "_title": "DB/String 6"
+              "_title": "DB/String 6",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "0,2": {
@@ -203,7 +235,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/DB/String 7",
-              "_title": "DB/String 7"
+              "_title": "DB/String 7",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "2,2": {
@@ -214,7 +248,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/Gyro Yaw",
-              "_title": "Gyro Yaw"
+              "_title": "Gyro Yaw",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "3,2": {
@@ -225,7 +261,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/Gyro Pitch",
-              "_title": "Gyro Pitch"
+              "_title": "Gyro Pitch",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "4,2": {
@@ -236,7 +274,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/Left Encoder",
-              "_title": "Left Encoder"
+              "_title": "Left Encoder",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "5,2": {
@@ -247,7 +287,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/Right Encoder",
-              "_title": "Right Encoder"
+              "_title": "Right Encoder",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "7,2": {
@@ -258,7 +300,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/ExtendArmLimitMin",
-              "_title": "ExtendArmLimitMin"
+              "_title": "ExtendArmLimitMin",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "3,3": {
@@ -269,7 +313,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/Autonomousff/active",
-              "_title": "/SmartDashboard/Autonomousff/active"
+              "_title": "/SmartDashboard/Autonomousff/active",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "8,0": {
@@ -280,7 +326,9 @@
             "content": {
               "_type": "ComboBox Chooser",
               "_source0": "network_table:///SmartDashboard/Autonomousff",
-              "_title": "Autonomousff"
+              "_title": "Autonomousff",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "9,0": {
@@ -291,7 +339,9 @@
             "content": {
               "_type": "Command",
               "_source0": "network_table:///SmartDashboard/dropOffAngle",
-              "_title": "dropOffAngle"
+              "_title": "dropOffAngle",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "11,0": {
@@ -302,7 +352,9 @@
             "content": {
               "_type": "Command",
               "_source0": "network_table:///SmartDashboard/dropOffExtend",
-              "_title": "dropOffExtend"
+              "_title": "dropOffExtend",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "13,0": {
@@ -313,7 +365,9 @@
             "content": {
               "_type": "Command",
               "_source0": "network_table:///SmartDashboard/dropObject",
-              "_title": "dropObject"
+              "_title": "dropObject",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "15,0": {
@@ -325,6 +379,8 @@
               "_type": "Boolean Box",
               "_source0": "network_table:///SmartDashboard/team",
               "_title": "team",
+              "_glyph": 148,
+              "_showGlyph": false,
               "Colors/Color when true": "#7CFC00FF",
               "Colors/Color when false": "#8B0000FF"
             }
@@ -337,7 +393,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/moveRestriction",
-              "_title": "moveRestriction"
+              "_title": "moveRestriction",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "18,0": {
@@ -348,7 +406,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/gyroYaw",
-              "_title": "gyroYaw"
+              "_title": "gyroYaw",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "19,0": {
@@ -359,7 +419,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/gyroPitch",
-              "_title": "gyroPitch"
+              "_title": "gyroPitch",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "20,0": {
@@ -370,7 +432,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/left talon",
-              "_title": "left talon"
+              "_title": "left talon",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "21,0": {
@@ -381,7 +445,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/right talon",
-              "_title": "right talon"
+              "_title": "right talon",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "8,1": {
@@ -393,6 +459,8 @@
               "_type": "Boolean Box",
               "_source0": "network_table:///SmartDashboard/grabbingArmLimitSwitchClosed",
               "_title": "grabbingArmLimitSwitchClosed",
+              "_glyph": 148,
+              "_showGlyph": false,
               "Colors/Color when true": "#7CFC00FF",
               "Colors/Color when false": "#8B0000FF"
             }
@@ -406,6 +474,8 @@
               "_type": "Boolean Box",
               "_source0": "network_table:///SmartDashboard/grabbingArmLimitSwitchOpen",
               "_title": "grabbingArmLimitSwitchOpen",
+              "_glyph": 148,
+              "_showGlyph": false,
               "Colors/Color when true": "#7CFC00FF",
               "Colors/Color when false": "#8B0000FF"
             }
@@ -419,6 +489,8 @@
               "_type": "Boolean Box",
               "_source0": "network_table:///SmartDashboard/extendingArmLimitSwitchMin",
               "_title": "extendingArmLimitSwitchMin",
+              "_glyph": 148,
+              "_showGlyph": false,
               "Colors/Color when true": "#7CFC00FF",
               "Colors/Color when false": "#8B0000FF"
             }
@@ -432,6 +504,8 @@
               "_type": "Boolean Box",
               "_source0": "network_table:///SmartDashboard/extendingArmLimitSwitchMax",
               "_title": "extendingArmLimitSwitchMax",
+              "_glyph": 148,
+              "_showGlyph": false,
               "Colors/Color when true": "#7CFC00FF",
               "Colors/Color when false": "#8B0000FF"
             }
@@ -445,6 +519,8 @@
               "_type": "Boolean Box",
               "_source0": "network_table:///SmartDashboard/rotatingArmLimitSwitchMax",
               "_title": "rotatingArmLimitSwitchMax",
+              "_glyph": 148,
+              "_showGlyph": false,
               "Colors/Color when true": "#7CFC00FF",
               "Colors/Color when false": "#8B0000FF"
             }
@@ -458,6 +534,8 @@
               "_type": "Boolean Box",
               "_source0": "network_table:///SmartDashboard/rotatingArmLimitSwitchMin",
               "_title": "rotatingArmLimitSwitchMin",
+              "_glyph": 148,
+              "_showGlyph": false,
               "Colors/Color when true": "#7CFC00FF",
               "Colors/Color when false": "#8B0000FF"
             }
@@ -470,7 +548,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/rotatingArmEncoderDegrees",
-              "_title": "rotatingArmEncoderDegrees"
+              "_title": "rotatingArmEncoderDegrees",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "14,1": {
@@ -481,7 +561,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/extendingArmEncoderPercent",
-              "_title": "extendingArmEncoderPercent"
+              "_title": "extendingArmEncoderPercent",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "1,2": {
@@ -492,7 +574,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/grabbingArmEncoderDegrees",
-              "_title": "grabbingArmEncoderDegrees"
+              "_title": "grabbingArmEncoderDegrees",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "6,2": {
@@ -503,7 +587,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/extendingArmEncoderRevolutions",
-              "_title": "extendingArmEncoderRevolutions"
+              "_title": "extendingArmEncoderRevolutions",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "14,2": {
@@ -514,7 +600,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/rotatingArmEncoderRevolutions",
-              "_title": "rotatingArmEncoderRevolutions"
+              "_title": "rotatingArmEncoderRevolutions",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "15,2": {
@@ -525,7 +613,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/time",
-              "_title": "time"
+              "_title": "time",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "16,2": {
@@ -536,7 +626,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/navX Port Resets",
-              "_title": "navX Port Resets"
+              "_title": "navX Port Resets",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "0,3": {
@@ -547,7 +639,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/navX Stream Responses",
-              "_title": "navX Stream Responses"
+              "_title": "navX Stream Responses",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "1,3": {
@@ -558,7 +652,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/navX Updates Per Sec",
-              "_title": "navX Updates Per Sec"
+              "_title": "navX Updates Per Sec",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "4,3": {
@@ -570,6 +666,8 @@
               "_type": "Boolean Box",
               "_source0": "network_table:///SmartDashboard/shouldMove",
               "_title": "shouldMove",
+              "_glyph": 148,
+              "_showGlyph": false,
               "Colors/Color when true": "#7CFC00FF",
               "Colors/Color when false": "#8B0000FF"
             }
@@ -582,7 +680,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/GrabbingLimitClosed",
-              "_title": "GrabbingLimitClosed"
+              "_title": "GrabbingLimitClosed",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "6,3": {
@@ -593,7 +693,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/GrabbingLimitOpen",
-              "_title": "GrabbingLimitOpen"
+              "_title": "GrabbingLimitOpen",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "7,3": {
@@ -604,7 +706,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/ExtendArmLimitMax",
-              "_title": "ExtendArmLimitMax"
+              "_title": "ExtendArmLimitMax",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "8,3": {
@@ -615,7 +719,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/RotArmLimitMax",
-              "_title": "RotArmLimitMax"
+              "_title": "RotArmLimitMax",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "9,3": {
@@ -626,7 +732,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/RotArmLimitMin",
-              "_title": "RotArmLimitMin"
+              "_title": "RotArmLimitMin",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "10,3": {
@@ -637,7 +745,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/RotArmDegrees",
-              "_title": "RotArmDegrees"
+              "_title": "RotArmDegrees",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "11,3": {
@@ -648,7 +758,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/extendingPercent",
-              "_title": "extendingPercent"
+              "_title": "extendingPercent",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "12,3": {
@@ -659,7 +771,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/grabbingDegrees",
-              "_title": "grabbingDegrees"
+              "_title": "grabbingDegrees",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "13,3": {
@@ -670,7 +784,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/ExtendArmRevs",
-              "_title": "ExtendArmRevs"
+              "_title": "ExtendArmRevs",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "14,3": {
@@ -681,7 +797,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/RotArmRevs",
-              "_title": "RotArmRevs"
+              "_title": "RotArmRevs",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "15,3": {
@@ -692,7 +810,9 @@
             "content": {
               "_type": "Command",
               "_source0": "network_table:///SmartDashboard/moveTest",
-              "_title": "moveTest"
+              "_title": "moveTest",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "17,3": {
@@ -703,7 +823,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/x",
-              "_title": "x"
+              "_title": "x",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "18,3": {
@@ -714,7 +836,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/y",
-              "_title": "y"
+              "_title": "y",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "19,3": {
@@ -725,7 +849,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/dist",
-              "_title": "dist"
+              "_title": "dist",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "20,3": {
@@ -736,7 +862,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/see",
-              "_title": "see"
+              "_title": "see",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "21,3": {
@@ -747,7 +875,100 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/conevscube",
-              "_title": "conevscube"
+              "_title": "conevscube",
+              "_glyph": 148,
+              "_showGlyph": false
+            }
+          },
+          "22,3": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "ComboBox Chooser",
+              "_source0": "network_table:///SmartDashboard/autoTrajectory",
+              "_title": "autoTrajectory",
+              "_glyph": 148,
+              "_showGlyph": false
+            }
+          },
+          "0,4": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Text View",
+              "_source0": "network_table:///SmartDashboard/Gyro",
+              "_title": "Gyro",
+              "_glyph": 148,
+              "_showGlyph": false
+            }
+          },
+          "1,4": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Text View",
+              "_source0": "network_table:///SmartDashboard/Robot Location",
+              "_title": "Robot Location",
+              "_glyph": 148,
+              "_showGlyph": false
+            }
+          },
+          "2,4": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Text View",
+              "_source0": "network_table:///SmartDashboard/Swerve[\u003cbound method PyCapsule.getChannel of \u003cAnalogInput 1\u003e\u003e] state",
+              "_title": "Swerve[\u003cbound method PyCapsule.getChannel of \u003cAnalogInput 1\u003e\u003e] state",
+              "_glyph": 148,
+              "_showGlyph": false
+            }
+          },
+          "3,4": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Text View",
+              "_source0": "network_table:///SmartDashboard/Swerve[\u003cbound method PyCapsule.getChannel of \u003cAnalogInput 2\u003e\u003e] state",
+              "_title": "Swerve[\u003cbound method PyCapsule.getChannel of \u003cAnalogInput 2\u003e\u003e] state",
+              "_glyph": 148,
+              "_showGlyph": false
+            }
+          },
+          "6,4": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Text View",
+              "_source0": "network_table:///SmartDashboard/Swerve[\u003cbound method PyCapsule.getChannel of \u003cAnalogInput 3\u003e\u003e] state",
+              "_title": "Swerve[\u003cbound method PyCapsule.getChannel of \u003cAnalogInput 3\u003e\u003e] state",
+              "_glyph": 148,
+              "_showGlyph": false
+            }
+          },
+          "7,4": {
+            "size": [
+              1,
+              1
+            ],
+            "content": {
+              "_type": "Text View",
+              "_source0": "network_table:///SmartDashboard/Swerve[\u003cbound method PyCapsule.getChannel of \u003cAnalogInput 4\u003e\u003e] state",
+              "_title": "Swerve[\u003cbound method PyCapsule.getChannel of \u003cAnalogInput 4\u003e\u003e] state",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           }
         }
@@ -773,6 +994,8 @@
               "_type": "Camera Stream",
               "_source0": "camera_server://USB Camera 0",
               "_title": "USB Camera 0",
+              "_glyph": 148,
+              "_showGlyph": false,
               "Crosshair/Show crosshair": true,
               "Crosshair/Crosshair color": "#000000FF",
               "Controls/Show controls": true,
@@ -791,6 +1014,8 @@
             "content": {
               "_type": "Mecanum Drivebase",
               "_title": "Mecanum Drivebase",
+              "_glyph": 148,
+              "_showGlyph": false,
               "Visuals/Show velocity vectors": true
             }
           },
@@ -802,6 +1027,8 @@
             "content": {
               "_type": "Grid Layout",
               "_title": "Team",
+              "_glyph": 149,
+              "_showGlyph": false,
               "Layout/Number of columns": 2,
               "Layout/Number of rows": 1,
               "Layout/Label position": "HIDDEN",
@@ -810,13 +1037,17 @@
                   "_type": "Boolean Box",
                   "_source0": "network_table:///SmartDashboard/team",
                   "_title": "/SmartDashboard/team",
+                  "_glyph": 148,
+                  "_showGlyph": false,
                   "Colors/Color when true": "#990000FF",
                   "Colors/Color when false": "#334DB3FF"
                 },
                 "1,0": {
                   "_type": "Toggle Switch",
                   "_source0": "network_table:///SmartDashboard/team",
-                  "_title": "/SmartDashboard/team"
+                  "_title": "/SmartDashboard/team",
+                  "_glyph": 148,
+                  "_showGlyph": false
                 }
               }
             }
@@ -830,6 +1061,8 @@
               "_type": "Motor Controller",
               "_source0": "network_table:///LiveWindow/Ungrouped/Talon SRX [3]",
               "_title": "Ungrouped/Talon SRX [3]",
+              "_glyph": 148,
+              "_showGlyph": false,
               "Visuals/Orientation": "HORIZONTAL"
             }
           },
@@ -841,7 +1074,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///LiveWindow/Ungrouped/Talon SRX [7]/Value",
-              "_title": "Ungrouped/Talon SRX [7]/Value"
+              "_title": "Ungrouped/Talon SRX [7]/Value",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "7,0": {
@@ -852,7 +1087,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///LiveWindow/Ungrouped/Talon SRX [9]/Value",
-              "_title": "Ungrouped/Talon SRX [9]/Value"
+              "_title": "Ungrouped/Talon SRX [9]/Value",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "0,1": {
@@ -863,7 +1100,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///LiveWindow/Ungrouped/Talon SRX [4]/Value",
-              "_title": "Ungrouped/Talon SRX [4]/Value"
+              "_title": "Ungrouped/Talon SRX [4]/Value",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "7,1": {
@@ -875,6 +1114,8 @@
               "_type": "Boolean Box",
               "_source0": "network_table:///LiveWindow/Ungrouped/DigitalInput[0]/Value",
               "_title": "Ungrouped/DigitalInput[0]/Value",
+              "_glyph": 148,
+              "_showGlyph": false,
               "Colors/Color when true": "#7CFC00FF",
               "Colors/Color when false": "#8B0000FF"
             }
@@ -887,7 +1128,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///LiveWindow/Ungrouped/Counter[0]/Value",
-              "_title": "Ungrouped/Counter[0]/Value"
+              "_title": "Ungrouped/Counter[0]/Value",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "7,2": {
@@ -898,7 +1141,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///LiveWindow/Ungrouped/navX-Sensor[2]/Value",
-              "_title": "Ungrouped/navX-Sensor[2]/Value"
+              "_title": "Ungrouped/navX-Sensor[2]/Value",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "8,0": {
@@ -909,7 +1154,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///LiveWindow/Ungrouped/MecanumDrive[1]/Front Left Motor Speed",
-              "_title": "Ungrouped/MecanumDrive[1]/Front Left Motor Speed"
+              "_title": "Ungrouped/MecanumDrive[1]/Front Left Motor Speed",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "8,1": {
@@ -920,7 +1167,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///LiveWindow/Ungrouped/MecanumDrive[1]/Front Right Motor Speed",
-              "_title": "Ungrouped/MecanumDrive[1]/Front Right Motor Speed"
+              "_title": "Ungrouped/MecanumDrive[1]/Front Right Motor Speed",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "8,2": {
@@ -931,7 +1180,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///LiveWindow/Ungrouped/MecanumDrive[1]/Rear Left Motor Speed",
-              "_title": "Ungrouped/MecanumDrive[1]/Rear Left Motor Speed"
+              "_title": "Ungrouped/MecanumDrive[1]/Rear Left Motor Speed",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           }
         }
@@ -955,7 +1206,9 @@
             ],
             "content": {
               "_type": "Basic FMS Info",
-              "_title": "Basic FMS Info"
+              "_title": "Basic FMS Info",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "5,1": {
@@ -966,7 +1219,9 @@
             "content": {
               "_type": "ComboBox Chooser",
               "_source0": "network_table:///SmartDashboard/Autonomousff",
-              "_title": "/SmartDashboard/Autonomousff"
+              "_title": "/SmartDashboard/Autonomousff",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "0,0": {
@@ -978,6 +1233,8 @@
               "_type": "Camera Stream",
               "_source0": "camera_server://USB Camera 0",
               "_title": "USB Camera 0",
+              "_glyph": 148,
+              "_showGlyph": false,
               "Crosshair/Show crosshair": true,
               "Crosshair/Crosshair color": "#FFFFFFFF",
               "Controls/Show controls": true,
@@ -997,6 +1254,8 @@
               "_type": "Boolean Box",
               "_source0": "network_table:///FMSInfo/IsRedAlliance",
               "_title": "Team",
+              "_glyph": 148,
+              "_showGlyph": false,
               "Colors/Color when true": "#B31A1AFF",
               "Colors/Color when false": "#1A3399FF"
             }
@@ -1024,6 +1283,8 @@
               "_type": "Number Slider",
               "_source0": "network_table:///SmartDashboard/moveRestriction",
               "_title": "Move Restriction",
+              "_glyph": 148,
+              "_showGlyph": false,
               "Slider Settings/Min": 0.0,
               "Slider Settings/Max": 1.0,
               "Slider Settings/Block increment": 0.0625,
@@ -1038,6 +1299,8 @@
             "content": {
               "_type": "Grid Layout",
               "_title": "Limit Switches",
+              "_glyph": 149,
+              "_showGlyph": false,
               "Layout/Number of columns": 3,
               "Layout/Number of rows": 1,
               "Layout/Label position": "TOP",
@@ -1045,12 +1308,16 @@
                 "0,0": {
                   "_type": "List Layout",
                   "_title": "RotatingArm",
+                  "_glyph": 149,
+                  "_showGlyph": false,
                   "Layout/Label position": "LEFT",
                   "_children": [
                     {
                       "_type": "Boolean Box",
                       "_source0": "network_table:///SmartDashboard/rotatingArmLimitSwitchMax",
                       "_title": "Max",
+                      "_glyph": 148,
+                      "_showGlyph": false,
                       "Colors/Color when true": "#7CFC00FF",
                       "Colors/Color when false": "#8B0000FF"
                     },
@@ -1058,6 +1325,8 @@
                       "_type": "Boolean Box",
                       "_source0": "network_table:///SmartDashboard/rotatingArmLimitSwitchMin",
                       "_title": "Min",
+                      "_glyph": 148,
+                      "_showGlyph": false,
                       "Colors/Color when true": "#7CFC00FF",
                       "Colors/Color when false": "#8B0000FF"
                     }
@@ -1066,12 +1335,16 @@
                 "1,0": {
                   "_type": "List Layout",
                   "_title": "Extending Arm",
+                  "_glyph": 149,
+                  "_showGlyph": false,
                   "Layout/Label position": "HIDDEN",
                   "_children": [
                     {
                       "_type": "Boolean Box",
                       "_source0": "network_table:///SmartDashboard/extendingArmLimitSwitchMax",
                       "_title": "/SmartDashboard/extendingArmLimitSwitchMax",
+                      "_glyph": 148,
+                      "_showGlyph": false,
                       "Colors/Color when true": "#7CFC00FF",
                       "Colors/Color when false": "#8B0000FF"
                     },
@@ -1079,6 +1352,8 @@
                       "_type": "Boolean Box",
                       "_source0": "network_table:///SmartDashboard/extendingArmLimitSwitchMin",
                       "_title": "/SmartDashboard/extendingArmLimitSwitchMin",
+                      "_glyph": 148,
+                      "_showGlyph": false,
                       "Colors/Color when true": "#7CFC00FF",
                       "Colors/Color when false": "#8B0000FF"
                     }
@@ -1087,12 +1362,16 @@
                 "2,0": {
                   "_type": "List Layout",
                   "_title": "Grabbing Arm",
+                  "_glyph": 149,
+                  "_showGlyph": false,
                   "Layout/Label position": "RIGHT",
                   "_children": [
                     {
                       "_type": "Boolean Box",
                       "_source0": "network_table:///SmartDashboard/grabbingArmLimitSwitchOpen",
                       "_title": "Open",
+                      "_glyph": 148,
+                      "_showGlyph": false,
                       "Colors/Color when true": "#7CFC00FF",
                       "Colors/Color when false": "#8B0000FF"
                     },
@@ -1100,6 +1379,8 @@
                       "_type": "Boolean Box",
                       "_source0": "network_table:///SmartDashboard/grabbingArmLimitSwitchClosed",
                       "_title": "Closed",
+                      "_glyph": 148,
+                      "_showGlyph": false,
                       "Colors/Color when true": "#7CFC00FF",
                       "Colors/Color when false": "#8B0000FF"
                     }
@@ -1115,7 +1396,9 @@
             ],
             "content": {
               "_type": "Basic FMS Info",
-              "_title": "Basic FMS Info"
+              "_title": "Basic FMS Info",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "3,2": {
@@ -1127,6 +1410,8 @@
               "_type": "Simple Dial",
               "_source0": "network_table:///SmartDashboard/gyroPitch",
               "_title": "Gyro Pitch",
+              "_glyph": 148,
+              "_showGlyph": false,
               "Range/Min": -180.0,
               "Range/Max": 180.0,
               "Visuals/Show value": true
@@ -1141,6 +1426,8 @@
               "_type": "Simple Dial",
               "_source0": "network_table:///SmartDashboard/gyroYaw",
               "_title": "Gyro Yaw",
+              "_glyph": 148,
+              "_showGlyph": false,
               "Range/Min": -180.0,
               "Range/Max": 180.0,
               "Visuals/Show value": true
@@ -1154,7 +1441,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/grabbingArmEncoderDegrees",
-              "_title": "Grabbing Degrees"
+              "_title": "Grabbing Degrees",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "2,1": {
@@ -1165,17 +1454,23 @@
             "content": {
               "_type": "List Layout",
               "_title": "Rotating Arm",
+              "_glyph": 149,
+              "_showGlyph": false,
               "Layout/Label position": "BOTTOM",
               "_children": [
                 {
                   "_type": "Text View",
                   "_source0": "network_table:///SmartDashboard/rotatingArmEncoderDegrees",
-                  "_title": "Encoder Degrees"
+                  "_title": "Encoder Degrees",
+                  "_glyph": 148,
+                  "_showGlyph": false
                 },
                 {
                   "_type": "Text View",
                   "_source0": "network_table:///SmartDashboard/rotatingArmEncoderRevolutions",
-                  "_title": "Encoder Revolutions"
+                  "_title": "Encoder Revolutions",
+                  "_glyph": 148,
+                  "_showGlyph": false
                 }
               ]
             }
@@ -1188,27 +1483,36 @@
             "content": {
               "_type": "List Layout",
               "_title": "Extending Arm",
+              "_glyph": 149,
+              "_showGlyph": false,
               "Layout/Label position": "BOTTOM",
               "_children": [
                 {
                   "_type": "Text View",
                   "_source0": "network_table:///SmartDashboard/extendingArmEncoderRevolutions",
-                  "_title": "Encoder Revs"
+                  "_title": "Encoder Revs",
+                  "_glyph": 148,
+                  "_showGlyph": false
                 },
                 {
                   "_type": "Text View",
                   "_source0": "network_table:///SmartDashboard/extendingArmEncoderPercent",
-                  "_title": "Encoder Percent"
+                  "_title": "Encoder Percent",
+                  "_glyph": 148,
+                  "_showGlyph": false
                 },
                 {
                   "_type": "Number Bar",
                   "_source0": "network_table:///SmartDashboard/extendingArmEncoderPercent",
                   "_title": "percent",
+                  "_glyph": 148,
+                  "_showGlyph": false,
                   "Range/Min": 0.0,
                   "Range/Max": 100.0,
                   "Range/Center": 0.0,
                   "Visuals/Num tick marks": 5,
-                  "Visuals/Show text": true
+                  "Visuals/Show text": true,
+                  "Visuals/Orientation": "HORIZONTAL"
                 }
               ]
             }
@@ -1235,27 +1539,37 @@
             "content": {
               "_type": "List Layout",
               "_title": "List Layout",
+              "_glyph": 149,
+              "_showGlyph": false,
               "Layout/Label position": "BOTTOM",
               "_children": [
                 {
                   "_type": "Command",
                   "_source0": "network_table:///SmartDashboard/dropOffAngle",
-                  "_title": "DropOffAngle"
+                  "_title": "DropOffAngle",
+                  "_glyph": 148,
+                  "_showGlyph": false
                 },
                 {
                   "_type": "Command",
                   "_source0": "network_table:///SmartDashboard/dropOffExtend",
-                  "_title": "DropOffExtend"
+                  "_title": "DropOffExtend",
+                  "_glyph": 148,
+                  "_showGlyph": false
                 },
                 {
                   "_type": "Command",
                   "_source0": "network_table:///SmartDashboard/dropObject",
-                  "_title": "Drop Object"
+                  "_title": "Drop Object",
+                  "_glyph": 148,
+                  "_showGlyph": false
                 },
                 {
                   "_type": "Command",
                   "_source0": "network_table:///SmartDashboard/moveTest",
-                  "_title": "SmartDashboard/moveTest"
+                  "_title": "SmartDashboard/moveTest",
+                  "_glyph": 148,
+                  "_showGlyph": false
                 }
               ]
             }
@@ -1269,6 +1583,8 @@
               "_type": "Simple Dial",
               "_source0": "network_table:///SmartDashboard/gyroPitch",
               "_title": "Gyro Pitch",
+              "_glyph": 148,
+              "_showGlyph": false,
               "Range/Min": -180.0,
               "Range/Max": 180.0,
               "Visuals/Show value": true
@@ -1283,6 +1599,8 @@
               "_type": "Simple Dial",
               "_source0": "network_table:///SmartDashboard/gyroYaw",
               "_title": "Gyro Yaw",
+              "_glyph": 148,
+              "_showGlyph": false,
               "Range/Min": -180.0,
               "Range/Max": 180.0,
               "Visuals/Show value": true
@@ -1296,17 +1614,23 @@
             "content": {
               "_type": "List Layout",
               "_title": "Rotating Arm",
+              "_glyph": 149,
+              "_showGlyph": false,
               "Layout/Label position": "BOTTOM",
               "_children": [
                 {
                   "_type": "Text View",
                   "_source0": "network_table:///SmartDashboard/rotatingArmEncoderDegrees",
-                  "_title": "Degrees"
+                  "_title": "Degrees",
+                  "_glyph": 148,
+                  "_showGlyph": false
                 },
                 {
                   "_type": "Text View",
                   "_source0": "network_table:///SmartDashboard/rotatingArmEncoderRevolutions",
-                  "_title": "Revolutions"
+                  "_title": "Revolutions",
+                  "_glyph": 148,
+                  "_showGlyph": false
                 }
               ]
             }
@@ -1319,7 +1643,9 @@
             "content": {
               "_type": "Text View",
               "_source0": "network_table:///SmartDashboard/grabbingArmEncoderDegrees",
-              "_title": "Grabbing Arm"
+              "_title": "Grabbing Arm",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           },
           "3,1": {
@@ -1330,22 +1656,29 @@
             "content": {
               "_type": "List Layout",
               "_title": "Extending Arm",
+              "_glyph": 149,
+              "_showGlyph": false,
               "Layout/Label position": "BOTTOM",
               "_children": [
                 {
                   "_type": "Number Bar",
                   "_source0": "network_table:///SmartDashboard/extendingArmEncoderPercent",
                   "_title": "Percent",
+                  "_glyph": 148,
+                  "_showGlyph": false,
                   "Range/Min": 0.0,
                   "Range/Max": 100.0,
                   "Range/Center": 0.0,
                   "Visuals/Num tick marks": 5,
-                  "Visuals/Show text": true
+                  "Visuals/Show text": true,
+                  "Visuals/Orientation": "HORIZONTAL"
                 },
                 {
                   "_type": "Text View",
                   "_source0": "network_table:///SmartDashboard/extendingArmEncoderRevolutions",
-                  "_title": "Revolutions"
+                  "_title": "Revolutions",
+                  "_glyph": 148,
+                  "_showGlyph": false
                 }
               ]
             }
@@ -1359,11 +1692,14 @@
               "_type": "Number Bar",
               "_source0": "network_table:///SmartDashboard/left talon",
               "_title": "SmartDashboard/left talon",
+              "_glyph": 148,
+              "_showGlyph": false,
               "Range/Min": -1.0,
               "Range/Max": 1.0,
               "Range/Center": 0.0,
               "Visuals/Num tick marks": 5,
-              "Visuals/Show text": true
+              "Visuals/Show text": true,
+              "Visuals/Orientation": "HORIZONTAL"
             }
           },
           "6,1": {
@@ -1375,11 +1711,14 @@
               "_type": "Number Bar",
               "_source0": "network_table:///SmartDashboard/right talon",
               "_title": "SmartDashboard/right talon",
+              "_glyph": 148,
+              "_showGlyph": false,
               "Range/Min": -1.0,
               "Range/Max": 1.0,
               "Range/Center": 0.0,
               "Visuals/Num tick marks": 5,
-              "Visuals/Show text": true
+              "Visuals/Show text": true,
+              "Visuals/Orientation": "HORIZONTAL"
             }
           },
           "2,0": {
@@ -1389,8 +1728,10 @@
             ],
             "content": {
               "_type": "ComboBox Chooser",
-              "_source0": "network_table:///SmartDashboard/Autonomousff",
-              "_title": "SmartDashboard/Autonomousff"
+              "_source0": "network_table:///SmartDashboard/autoTrajectory",
+              "_title": "SmartDashboard/autoTrajectory",
+              "_glyph": 148,
+              "_showGlyph": false
             }
           }
         }
@@ -1398,9 +1739,9 @@
     }
   ],
   "windowGeometry": {
-    "x": -7.333333492279053,
-    "y": -7.333333492279053,
-    "width": 1294.6666259765625,
-    "height": 686.6666870117188
+    "x": 1471.0,
+    "y": -26.0,
+    "width": 1299.0,
+    "height": 695.0
   }
 }
