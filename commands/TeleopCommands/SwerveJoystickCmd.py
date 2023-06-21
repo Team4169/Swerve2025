@@ -52,7 +52,7 @@ class SwerveJoystickCmd(CommandBase):
         
 
     def end(self, interrupted):
-        self.swerve.stopModuels()
+        self.swerve.stopModules()
 
     def isFinished(self):
         return False

@@ -69,7 +69,7 @@ class swervemodule(commands2.SubsystemBase):
         return angle * (-1 if self.absoluteEncoderReversed else 1) #? reverse if needed
     
     def getSwerveModulePosition(self) -> SwerveModulePosition:
-            return SwerveModulePosition(self.getDrivingPosition(), Rotation2d(self.getAbsoluteEncoderRad())),
+            return SwerveModulePosition(self.getDrivingPosition(), Rotation2d(self.getAbsoluteEncoderRad()))
 
     def resetEncoders(self):
         self.drivingEncoder.setPosition(0)

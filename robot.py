@@ -8,6 +8,7 @@ import math
 import constants
 
 from robotcontainer import RobotContainer
+from commands2 import CommandScheduler
 from commands.TeleopCommands.SwerveJoystickCmd import SwerveJoystickCmd
 import ntcore
 import robotpy_apriltag
@@ -42,12 +43,13 @@ class MyRobot(commands2.TimedCommandRobot):
 
         self.driverController = self.Container.driverController
         self.operatorController = self.Container.operatorController
-        
         # self.drive = self.container.drive
-        self.Swerve = self.Container.Swerve
+        self.swerve = self.Container.swerve
+        CommandScheduler.getInstance().registerSubsystem(self.swerve)
         #~ LED commands and variables
         self.LEDserver = wpilib.I2C(wpilib.I2C.Port.kMXP, 100)
         self.previousLEDCommand = 0
+
     def disabledInit(self) -> None:
         """This function is called once each time the robot enters Disabled mode."""
 
@@ -58,12 +60,12 @@ class MyRobot(commands2.TimedCommandRobot):
     def autonomousInit(self) -> None:
         """This autonomous runs the autonomous command selected by your RobotContainer class."""
         #~ will be needed for future use
-        self.AutonomousCommand = self.Container.getAutonomousCommand()
-        
+        self.autonomousCommand = self.Container.getAutonomousCommand()
+        print(self.autonomousCommand, type(self.autonomousCommand))
         # self.output("ato com", self.autonomousCommand)
-        #
-        if self.AutonomousCommand:
-            self.AutonomousCommand.schedule()
+       
+        if self.autonomousCommand:
+            self.autonomousCommand.schedule()
 
     def autonomousPeriodic(self) -> None:
         """This function is called periodically during autonomous"""
@@ -99,8 +101,8 @@ class MyRobot(commands2.TimedCommandRobot):
 
         # print(wpilib.DriverStation.getAlliance())
 
-        # self.sd.putNumber("gyroYaw", self.drive.gyro.getYaw())
-        # self.sd.putNumber("gyroPitch", self.drive.gyro.getPitch())
+        # self.sd.putNumber("gyroYaw", self.swerve.getHeading())
+        # self.sd.putValue("gyroPitch", self.swerve.getPose())
 
         # # self.drive.encoderTicks.set(self.drive.)
         # self.sd.putNumber("left talon", self.leftTalon.getSelectedSensorPosition())

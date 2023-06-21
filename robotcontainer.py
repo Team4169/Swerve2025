@@ -4,7 +4,7 @@ from wpimath.geometry import Pose2d, Rotation2d, Translation2d
 
 
 from wpimath.trajectory import TrajectoryConfig, Trajectory, TrajectoryUtil, TrajectoryGenerator, TrajectoryParameterizer
-from wpimath.controller import ProfiledPIDController, PIDController
+from wpimath.controller import ProfiledPIDController, PIDController, ProfiledPIDControllerRadians
 
 from commands2 import Swerve4ControllerCommand
 
@@ -57,10 +57,10 @@ class RobotContainer:
         # self.rotatingArmMinLimitSwitch = self.rotatingArm.getForwardLimitSwitch(rev.SparkMaxLimitSwitch.Type.kNormallyOpen)
 
         # The robot's subsystems
-        self.Swerve = SwerveSubsystem()
+        self.swerve = SwerveSubsystem()
 
-        self.Swerve.setDefaultCommand(SwerveJoystickCmd(
-                self.Swerve,
+        self.swerve.setDefaultCommand(SwerveJoystickCmd(
+                self.swerve,
                 self.driverController.getLeftY(),
                 self.driverController.getLeftX(),
                 self.driverController.getRightX(),
@@ -93,8 +93,9 @@ class RobotContainer:
         # 1. Create Trajectory settings
         self.trajectoryConfig = TrajectoryConfig(
             AutoConstants.kMaxSpeedMetersPerSecond,
-            AutoConstants.kMaxAccelerationMetersPerSecondSquared).setKinematics(
-            RobotConstants.kDriveKinematics)
+            AutoConstants.kMaxAccelerationMetersPerSecondSquared)
+        self.trajectoryConfig.setKinematics(RobotConstants.kDriveKinematics)
+        print(self.trajectoryConfig)
         # 2. Generate Trajectory
         self.trajectory = TrajectoryGenerator.generateTrajectory(
             # ? initial location and rotation
@@ -113,27 +114,26 @@ class RobotContainer:
         # 3. Create PIdControllers to correct and track trajectory
         self.xController = PIDController(AutoConstants.kPXController, 0, 0)
         self.yController = PIDController(AutoConstants.kPYController, 0, 0)
-        self.thetaController = ProfiledPIDController(
+        self.thetaController = ProfiledPIDControllerRadians(
             AutoConstants.kPThetaController, 0, 0, AutoConstants.kThetaControllerConstraints)
         self.thetaController.enableContinuousInput(-math.pi, math.pi)
 
         # 4. Construct command to follow trajectory
         self.swerveControllerCommand = Swerve4ControllerCommand(
             self.trajectory,
-            self.Swerve.getPose,
+            self.swerve.getPose,
             RobotConstants.kDriveKinematics,
             self.xController,
             self.yController,
             self.thetaController,
-            self.Swerve.getModuleStates,
-            self.Swerve
+            self.swerve.setModuleStates,
+            [self.swerve]
         )
-
         # 5. Add some init and wrap up, and return command 
         self.square = commands2.SequentialCommandGroup(
-            commands2.InstantCommand(self.Swerve.resetOdometry(self.trajectory.getInitialPose())),
+            commands2.InstantCommand(lambda:self.swerve.resetOdometry(self.trajectory.initialPose())),
             self.swerveControllerCommand,
-            commands2.InstantCommand(self.swerve.stopModules())
+            commands2.InstantCommand(lambda:self.swerve.stopModules())
         )
         self.circle = ppl.PathPlannerTrajectory(ppl.PathPlanner.loadPathGroup(
             "circle",

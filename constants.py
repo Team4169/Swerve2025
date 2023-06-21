@@ -8,7 +8,7 @@ import wpiutil
 import UtilCommands
 from wpimath.kinematics import SwerveDrive4Kinematics
 from wpimath.geometry._geometry import Translation2d
-from wpimath.trajectory import TrapezoidProfile
+from wpimath.trajectory import TrapezoidProfileRadians, TrapezoidProfile
 #~ Controller Options
 class OIConstants:
     kDriverControllerPort = 0
@@ -103,7 +103,7 @@ class AutoConstants:
         kMaxAngularSpeedRadiansPerSecond = RobotConstants.kphysicalMaxSpeedMetersPerSecond / 10
 
         kPThetaController = 1.0
-        kThetaControllerConstraints = TrapezoidProfile.Constraints(
+        kThetaControllerConstraints = TrapezoidProfileRadians.Constraints(
                 kMaxAngularSpeedRadiansPerSecond,
                 kMaxAngularAccelerationRadiansPerSecondSquared,
         )

@@ -74,13 +74,19 @@ class SwerveSubsystem (commands2.SubsystemBase):
     def getRotation2d(self) -> Rotation2d:
         return Rotation2d.fromDegrees(self.getHeading())
 
-    def getPoise(self) -> Pose2d:
+    def getPose(self) -> Pose2d:
         return self.odometer.getPose()
     
     def resetOdometry(self, pose: Pose2d):
-        self.odometer.resetPosition(pose, self.getRotation2d())
+        self.odometer.resetPosition(
+        self.getRotation2d(), pose,
+        self.frontLeft.getSwerveModulePosition(),
+        self.frontRight.getSwerveModulePosition(),
+        self.backLeft.getSwerveModulePosition(),
+        self.backRight.getSwerveModulePosition()
+        )
     
-    def stopModuels(self):
+    def stopModules(self):
         self.frontLeft.stop()
         self.frontRight.stop()
         self.backLeft.stop()
@@ -93,7 +99,7 @@ class SwerveSubsystem (commands2.SubsystemBase):
         self.backLeft.setDesiredState(states[2])
         self.backRight.setDesiredState(states[3])
     
-    def getModuleStates(self) -> tuple[SwerveModulePosition]:
+    def getModuleStates(self) -> list[SwerveModulePosition]:
         return (
                 self.frontRight.getSwerveModulePosition(),
                 self.backRight.getSwerveModulePosition(),
@@ -115,5 +121,5 @@ class SwerveSubsystem (commands2.SubsystemBase):
                             SwerveModulePosition(self.frontLeft.getDrivingPosition(), Rotation2d(self.frontLeft.getAbsoluteEncoderRad())),
                             SwerveModulePosition(self.backLeft.getDrivingPosition(), Rotation2d(self.backLeft.getAbsoluteEncoderRad()))
                             )
-        self.sd.putString("Robot Location", str(self.getPoise()))
+        self.sd.putString("Robot Location", str(self.getPose()))
         
