@@ -17,7 +17,11 @@ import operator
 import typing
 from photonvision import SimVisionSystem, SimVisionTarget
 from wpilib import RobotController, SmartDashboard
-from wpilib.simulation import EncoderSim, PWMSim, SimDeviceSim
+from wpilib.simulation import (
+    EncoderSim, 
+    PWMSim, 
+    SimDeviceSim
+    )
 from wpimath.geometry import (
     Pose2d, 
     Rotation2d, 
