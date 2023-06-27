@@ -1,296 +1,71 @@
-# -----------------
-# code adopted from 1757 Westwood Robotics
-# -----------------
-#
-# See the documentation for more details on how this works
-#
-# The idea here is you provide a simulation object that overrides specific
-# pieces of WPILib, and modifies motors/sensors accordingly depending on the
-# state of the simulation. An example of this would be measuring a motor
-# moving for a set period of time, and then changing a limit switch to turn
-# on after that period of time. This can help you do more complex simulations
-# of your robot code without too much extra effort.
-#
-
-import functools
-import operator
-import typing
-from photonvision import SimVisionSystem, SimVisionTarget
-from wpilib import RobotController, SmartDashboard
-from wpilib.simulation import (
-    EncoderSim, 
-    PWMSim, 
-    SimDeviceSim
-    )
-from wpimath.geometry import (
-    Pose2d, 
-    Rotation2d, 
-    Transform2d, 
-    Translation2d
-)
-from wpimath.system.plant import DCMotor
-import wpimath.kinematics
+import wpilib.simulation
 from pyfrc.physics.core import PhysicsInterface
+from pyfrc.physics import drivetrains
 import constants
+import typing
 
-
-class SwerveModuleSim:
-    def __init__(
-        self,
-        position: Translation2d,
-        wheelMotorSim: PWMSim,
-        wheelMotorType: DCMotor,
-        driveMotorGearing,
-        swerveMotorSim: PWMSim,
-        swerveMotorType: DCMotor,
-        steerMotorGearing,
-        wheelEncoderSim: EncoderSim,
-        swerveEncoderSim: EncoderSim,
-    ) -> None:
-        self.position = position
-        self.wheelMotorSim = wheelMotorSim
-        self.wheelMotorType = wheelMotorType
-        self.driveMotorGearing = driveMotorGearing
-        self.swerveMotorSim = swerveMotorSim
-        self.swerveMotorType = swerveMotorType
-        self.steerMotorGearing = steerMotorGearing
-        self.wheelEncoderSim = wheelEncoderSim
-        self.swerveEncoderSim = swerveEncoderSim
-
-    def __str__(self) -> str:
-        return f"pos: x={self.position.X():.2f} y={self.position.Y():.2f}"
-
-
-class SwerveDriveSim:
-    def __init__(self, swerveModuleSims: typing.Tuple[SwerveModuleSim, ...]) -> None:
-        self.swerveModuleSims = swerveModuleSims
-        self.kinematics = wpimath.kinematics.SwerveDrive4Kinematics(
-            *(module.position for module in swerveModuleSims)
-        )
-        self.pose = constants.sim.kSimDefaultRobotLocation
-        self.outputs = None
-
-    def getPose(self) -> Pose2d:
-        return self.pose
-
-    def getHeading(self) -> Rotation2d:
-        return self.pose.rotation()
-
-    def update(self, tm_diff: float, robotVoltage: float) -> None:
-        deltaT = tm_diff
-        states = []
-        for module in self.swerveModuleSims:
-            wheelVoltage = module.wheelMotorSim.getSpeed() * robotVoltage
-            wheelAngularVelocity = (
-                wheelVoltage
-                * module.wheelMotorType.Kv
-                / module.driveMotorGearing  # scale the wheel motor to get more reasonable wheel speeds
-            )
-            wheelLinearVelocity = (
-                wheelAngularVelocity * constants.ModuleConstants.kWheelDistancePerRadian
-            )
-            module.wheelEncoderSim.setRate(wheelLinearVelocity)
-
-            deltaWheelDistance = wheelLinearVelocity * deltaT
-            newWheelDistance = module.wheelEncoderSim.getDistance() + deltaWheelDistance
-            module.wheelEncoderSim.setDistance(newWheelDistance)
-
-            swerveVoltage = module.swerveMotorSim.getSpeed() * robotVoltage
-            swerveAngularVelocity = (
-                swerveVoltage
-                * module.swerveMotorType.Kv
-                / module.steerMotorGearing  # scale the swerve motor to get more reasonable swerve speeds
-            )
-            module.swerveEncoderSim.setRate(swerveAngularVelocity)
-
-            deltaSwerveAngle = swerveAngularVelocity * deltaT
-            newSwerveAngle = module.swerveEncoderSim.getDistance() + deltaSwerveAngle
-            module.swerveEncoderSim.setDistance(newSwerveAngle)
-
-            state = wpimath.kinematics.SwerveModuleState(
-                wheelLinearVelocity,
-                Rotation2d(newSwerveAngle),
-            )
-            states.append(state)
-
-        chassisSpeed = self.kinematics.toChassisSpeeds(*states)
-        deltaHeading = chassisSpeed.omega * deltaT
-        deltaX = chassisSpeed.vx * deltaT
-        deltaY = chassisSpeed.vy * deltaT
-
-        deltaTrans = Transform2d(deltaX, deltaY, deltaHeading)
-
-        newPose = self.pose + deltaTrans
-        self.pose = newPose
-
-
-# class VisionSim:
-    # def __init__(self) -> None:
-    #     self.system = SimVisionSystem(
-    #         constants.sim.kPhotonvisionCameraName,
-    #         constants.sim.kPhotonvisionCameraDiagonalFOV,
-    #         constants.sim.kLimelightRelativeToRobotTransform.inverse(),
-    #         9000,
-    #         *constants.sim.kPhotonvisionCameraPixelDimensions,
-    #         0.1,
-    #     )
-
-    #     for tag_id, position in zip(
-    #         constants.sim.kApriltagPositionDict.keys(),
-    #         constants.sim.kApriltagPositionDict.values(),
-    #     ):
-    #         simTarget = SimVisionTarget(
-    #             position, constants.sim.kApriltagWidth, constants.sim.kApriltagHeight, tag_id
-    #         )
-    #         self.system.addSimVisionTarget(simTarget)
-
-    # def update(self, robotPose: Pose2d) -> None:
-    #     self.system.processFrame(robotPose)
+if typing.TYPE_CHECKING:
+    from robot import MyRobot
 
 
 class PhysicsEngine:
     """
-    Simulates a drivetrain
+    Simulates a 4-wheel mecanum robot using Tank Drive joystick control
     """
 
-    # pylint: disable-next=unused-argument
-    def __init__(self, physics_controller: PhysicsInterface):
+    def __init__(self, physics_controller: PhysicsInterface, robot: "MyRobot"):
+        """
+        :param physics_controller: `pyfrc.physics.core.Physics` object
+                                   to communicate simulation effects to
+        """
+
         self.physics_controller = physics_controller
+        # Motors
+        self.lf_motor = wpilib.simulation.PWMSim(robot.swerve.frontLeft.drivingMotor.getDeviceId())
+        self.lf_turning_motor = wpilib.simulation.PWMSim(robot.swerve.frontLeft.turningMotor.getDeviceId())
+        
+        self.lr_motor = wpilib.simulation.PWMSim(robot.swerve.backLeft.drivingMotor.getDeviceId())
+        self.lr_turning_motor = wpilib.simulation.PWMSim(robot.swerve.backLeft.turningMotor.getDeviceId())
+        
+        self.rf_motor = wpilib.simulation.PWMSim(robot.swerve.frontRight.drivingMotor.getDeviceId())
+        self.rf_turning_motor = wpilib.simulation.PWMSim(robot.swerve.frontRight.turningMotor.getDeviceId())
+        
+        self.rr_motor = wpilib.simulation.PWMSim(robot.swerve.backRight.drivingMotor.getDeviceId())
+        self.rr_turning_motor = wpilib.simulation.PWMSim(robot.swerve.backRight.turningMotor.getDeviceId())
+        # Gyro
+        self.gyro = wpilib.simulation.AnalogGyroSim(wpilib.SerialPort.Port.kUSB1)
 
-        self.frontLeftModuleSim = SwerveModuleSim(
-            constants.RobotConstants.kFrontLeftWheelPosition,
-            PWMSim(constants.sim.kSimFrontLeftDriveMotorPort),
-            DCMotor.NEO(),
-            constants.ModuleConstants.kDriveMotorGearRatio,
-            PWMSim(constants.sim.kSimFrontLeftSteerMotorPort),
-            DCMotor.NEO(),
-            constants.ModuleConstants.kTurningMotorGearRatio,
-            EncoderSim.createForIndex(constants.sim.kSimFrontLeftDriveEncoderPorts[0]),
-            EncoderSim.createForIndex(constants.sim.kSimFrontLeftSteerEncoderPorts[0]),
-        )
-        self.frontRightModuleSim = SwerveModuleSim(
-            constants.RobotConstants.kFrontRightWheelPosition,
-            PWMSim(constants.sim.kSimFrontRightDriveMotorPort),
-            DCMotor.NEO(),
-            constants.ModuleConstants.kDriveMotorGearRatio,
-            PWMSim(constants.sim.kSimFrontRightSteerMotorPort),
-            DCMotor.NEO(),
-            constants.ModuleConstants.kTurningMotorGearRatio,
-            EncoderSim.createForIndex(constants.sim.kSimFrontRightDriveEncoderPorts[0]),
-            EncoderSim.createForIndex(constants.sim.kSimFrontRightSteerEncoderPorts[0]),
-        )
-        self.backSimLeftModule = SwerveModuleSim(
-            constants.RobotConstants.kBackLeftWheelPosition,
-            PWMSim(constants.sim.kSimBackLeftDriveMotorPort),
-            DCMotor.NEO(),
-            constants.ModuleConstants.kDriveMotorGearRatio,
-            PWMSim(constants.sim.kSimBackLeftSteerMotorPort),
-            DCMotor.NEO(),
-            constants.ModuleConstants.kTurningMotorGearRatio,
-            EncoderSim.createForIndex(constants.sim.kSimBackLeftDriveEncoderPorts[0]),
-            EncoderSim.createForIndex(constants.sim.kSimBackLeftSteerEncoderPorts[0]),
-        )
-        self.backSimRightModule = SwerveModuleSim(
-            constants.RobotConstants.kBackRightWheelPosition,
-            PWMSim(constants.sim.kSimBackRightDriveMotorPort),
-            DCMotor.NEO(),
-            constants.ModuleConstants.kDriveMotorGearRatio,
-            PWMSim(constants.sim.kSimBackRightSteerMotorPort),
-            DCMotor.NEO(),
-            constants.ModuleConstants.kTurningMotorGearRatio,
-            EncoderSim.createForIndex(constants.sim.kSimBackRightDriveEncoderPorts[0]),
-            EncoderSim.createForIndex(constants.sim.kSimBackRightSteerEncoderPorts[0]),
-        )
-
-        self.swerveModuleSims = [
-            self.frontLeftModuleSim,
-            self.frontRightModuleSim,
-            self.backSimLeftModule,
-            self.backSimRightModule,
-        ]
-
-        self.driveSim = SwerveDriveSim(tuple(self.swerveModuleSims))
-
-        self.gyroSim = SimDeviceSim("navX-Sensor[4]")
-        self.gyroYaw = self.gyroSim.getDouble("Yaw")
-        self.gyroPitch = self.gyroSim.getDouble("Pitch")
-
-        self.sim_initialized = False
-
-        # self.vision = VisionSim()
-
-        # targets = []
-        # for target in constants.sim.kApriltagPositionDict.values():
-        #     x = target.X()
-        #     y = target.Y()
-        #     z = target.Z()
-        #     rotationQuaternion = target.rotation().getQuaternion()
-        #     w_rot = rotationQuaternion.W()
-        #     x_rot = rotationQuaternion.X()
-        #     y_rot = rotationQuaternion.Y()
-        #     z_rot = rotationQuaternion.Z()
-
-        #     targets.append(
-        #         [x, y, z, w_rot, x_rot, y_rot, z_rot]
-        #     )  # https://github.com/Mechanical-Advantage/AdvantageScope/blob/main/docs/tabs/3D-FIELD.md#cones
-
-        # SmartDashboard.putNumberArray(
-        #     constants.sim.kFieldSimTargetKey,
-        #     functools.reduce(
-        #         operator.add, targets, []
-        #     ),  # adds all the values found within targets (converts [[]] to [])
-        # )
-
-    # pylint: disable-next=unused-argument
     def update_sim(self, now: float, tm_diff: float) -> None:
         """
         Called when the simulation parameters for the program need to be
         updated.
-
         :param now: The current time as a float
         :param tm_diff: The amount of time that has passed since the last
                         time that this function was called
         """
 
-        # if not self.sim_initialized:
-        #     self.sim_initialized = True
-        #     # self.physics_controller.field, is not set until simulation_init
-        #     simTargetObject = self.physics_controller.field.getObject(
-        #         constants.sim.kSimTargetName
-        #     )
-        #     simTargetObject.setPose(constants.sim.kSimDefaultTargetLocation)
-        #     simBallObject = self.physics_controller.field.getObject(
-        #         constants.sim.kSimBallName
-        #     )
-        #     simBallObject.setPose(constants.sim.kSimDefaultBallLocation)
-
-        self.gyroYaw.set(-self.driveSim.getHeading().degrees())
-        x = float(SmartDashboard.getNumber("therealgyro", -30))
-        self.gyroPitch.set(SmartDashboard.getNumber("thegyronumbies", x))
-
         # Simulate the drivetrain
-        voltage = RobotController.getInputVoltage()
+        lf_motor = self.lf_motor.getSpeed()
+        lf_angle = self.lf_turning_motor.getSpeed()
+        lr_motor = self.lr_motor.getSpeed()
+        lr_angle = self.lr_turning_motor.getSpeed()
+        rf_motor = self.rf_motor.getSpeed()
+        rf_angle = self.rf_turning_motor.getSpeed()
+        rr_motor = self.rr_motor.getSpeed()
+        rr_angle = self.rr_turning_motor.getSpeed()
 
-        self.driveSim.update(tm_diff, voltage)
+        speeds = drivetrains.four_motor_swerve_drivetrain(lr_motor = lr_motor, 
+                                                          rf_motor = rf_motor, 
+                                                          rr_motor = rr_motor,
+                                                          lf_motor = lf_motor,
+                                                          lr_angle = lr_angle,
+                                                          rf_angle = rf_angle,
+                                                          rr_angle = rr_angle,
+                                                          lf_angle = lf_angle
+                                                          )
+        pose = self.physics_controller.drive(speeds, tm_diff)
 
-        simRobotPose = self.driveSim.getPose()
-        self.physics_controller.field.setRobotPose(simRobotPose)
-
-        # simulate the vision system
-        # self.vision.update(simRobotPose)
-
-        # publish the simulated robot pose to nt
-        SmartDashboard.putNumberArray(
-            constants.sim.kSimRobotPoseArrayKey,
-            [simRobotPose.X(), simRobotPose.Y(), simRobotPose.rotation().radians()],
-        )
-
-        # publish the simulated target and ball pose to nt
-        # simTargetObject = self.physics_controller.field.getObject(
-        #     constants.sim.kSimTargetName
-        # )
-        # simTargetPose = simTargetObject.getPose()
-        # SmartDashboard.putNumberArray(
-        #     constants.sim.kSimTargetPoseArrayKey,
-        #     [simTargetPose.X(), simTargetPose.Y(), simTargetPose.rotation().radians()],
-        # )
+        # Update the gyro simulation
+        # -> FRC gyros are positive clockwise, but the returned pose is positive
+        #    counter-clockwise
+        self.gyro.setAngle(-pose.rotation().degrees())

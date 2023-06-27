@@ -121,41 +121,4 @@ class AutoConstants:
                 kMaxAngularAccelerationRadiansPerSecondSquared,
         )
 class sim:
-    kSimTargetName = "SimTarget"
-    # kSimDefaultTargetLocation = Pose2d(
-    #     kFieldLength / 2, kFieldWidth / 2, 180 * kRadiansPerDegree
-    # )
-    """[meters, meters, radians]"""
-
-    kSimDefaultRobotLocation = Pose2d(FildConstants.kFieldLength / 2, FildConstants.kFieldWidth / 2, 0)
-    # kSimDefaultTargetHeight = 8 * kMetersPerFoot + 8 * kMetersPerInch  # 8ft 8in
-    # kSimBallName = "SimBall"
-    # kSimDefaultBallLocation = Pose2d(kFieldLength / 4, kFieldWidth / 2, 0)
-
-    """meters"""
-
-    kSimRobotPoseArrayKey = "SimRobotPoseArray"
-    kSimTargetPoseArrayKey = "SimTargetPoseArray"
-    kSimBallPoseArrayKey = "SimBallPoseArray"
-    kSimTargetHeightKey = "SimTargetHeight"
-    kSimTargetTrackingModuleName = "sim_target_tracker"
-    kSimTargetUpperHubRadius = 2
-
-    kSimFrontLeftDriveMotorPort = 0
-    kSimFrontLeftSteerMotorPort = 1
-    kSimFrontRightDriveMotorPort = 2
-    kSimFrontRightSteerMotorPort = 3
-    kSimBackLeftDriveMotorPort = 4
-    kSimBackLeftSteerMotorPort = 5
-    kSimBackRightDriveMotorPort = 6
-    kSimBackRightSteerMotorPort = 7
-
-
-    kSimFrontLeftDriveEncoderPorts = (16, 1)
-    kSimFrontLeftSteerEncoderPorts = (2, 3)
-    kSimFrontRightDriveEncoderPorts = (4, 5)
-    kSimFrontRightSteerEncoderPorts = (6, 7)
-    kSimBackLeftDriveEncoderPorts = (8, 9)
-    kSimBackLeftSteerEncoderPorts = (10, 11)
-    kSimBackRightDriveEncoderPorts = (12, 13)
-    kSimBackRightSteerEncoderPorts = (14, 15)
+    l =1
